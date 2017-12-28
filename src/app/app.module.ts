@@ -2,14 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsComponent } from './forms/forms.component';
-import { FormDefinitionComponent } from './form-definition/form-definition.component';
+import { FormDefinitionComponent } from './form-definition/forms-definition.component';
+import { FormControlComponent } from './form-control/form-control.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormsComponent,
-    FormDefinitionComponent
+    FormDefinitionComponent,
+    FormControlComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule

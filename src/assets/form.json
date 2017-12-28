@@ -1,0 +1,40 @@
+{
+  "id": "40ab3fbb-8040-4bfc-a4a8-43346b0e4cde",
+  "name": "team-pilot.forms.feedback-form.name",
+  "baseUrl": "https://localhost",
+  "release": {
+    "version": 1.0,
+    "date": "2017-09-01T05:00:00+05:30"
+  },
+  "config": {
+    "location": {
+      "required": true,
+      "failOnError": false
+    },
+    "i18n": {
+      "primaryLanguage": "en_US",
+      "languages": {
+        "en_US": {
+          "team-pilot.forms.feedback-form.name": "Delivery Feedback Form",
+          "form.first_name": "First Name",
+          "form.middle_name": "Middle Name",
+          "form.last_name": "Last Name",
+          "form.display_name": "Display Name"
+        },
+        "hi_IN": {"team-pilot.forms.feedback-form.name": "वितरण प्रतिक्रिया प्रपत्र"}
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "fa1512eb-8e26-48f8-9515-0908911edc84",
+      "title": "Page-1",
+      "fields": [
+        {"type": "text", "name": "firstName", "label": "form.first_name", "required": true},
+        {"type": "text", "name": "middleName", "label": "form.middle_name"},
+        {"type": "text", "name": "lastName", "label": "form.last_name", "required": true},
+        {"type": "text", "name": "displayName", "label": "form.display_name", "required": true}
+      ]
+    }
+  ]
+}

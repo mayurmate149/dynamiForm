@@ -1,0 +1,37 @@
+<div [formGroup]="form" >
+  <label [attr.for]="inputField.name">{{inputField.label}}</label>
+
+  <div [ngSwitch]="inputField.type">
+
+    <input *ngSwitchCase="InputType.TEXT" [formControlName]="inputField.name"
+           [id]="inputField.name" [type]="inputField.type">
+
+    <input *ngSwitchCase="InputType.PASSWORD" [formControlName]="inputField.name"
+           [id]="inputField.name" [type]="inputField.type">
+
+    <input *ngSwitchCase="InputType.RADIO" [formControlName]="inputField.name"
+           [id]="inputField.name" [type]="inputField.type">
+
+    <input *ngSwitchCase="InputType.CHECKBOX" [formControlName]="inputField.name"
+           [id]="inputField.name" [type]="inputField.type">
+
+    <input *ngSwitchCase="InputType.DATE" [formControlName]="inputField.name"
+           [id]="inputField.name" [type]="inputField.type">
+
+    <input *ngSwitchCase="InputType.HIDDEN" [formControlName]="inputField.name"
+           [id]="inputField.name" [type]="inputField.type">
+
+    <input *ngSwitchCase="InputType.FILE" [formControlName]="inputField.name"
+           [id]="inputField.name" [type]="inputField.type">
+
+    <canvas *ngSwitchCase="InputType.CANVAS" [formControlName]="inputField.name"
+            [id]="inputField.name" [type]="inputField.type" width="200" height="100"></canvas>
+
+    <select [id]="inputField.key" *ngSwitchCase="InputType.SELECT" [formControlName]="inputField.key">
+      <option *ngFor="let opt of inputField.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+  </div>
+
+  <div class="errorMessage" *ngIf="!isValid">{{inputField.label}} is required</div>
+</div>
