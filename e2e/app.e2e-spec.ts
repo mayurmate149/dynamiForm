@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('dynamic-forms App', () => {
+describe('forms App', () => {
   let page: AppPage;
 
   beforeEach(() => {
