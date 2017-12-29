@@ -14,6 +14,7 @@ export class FormControlComponent implements OnInit
 	@Input() inputField: InputFieldBase<any>;
 	@Input() form: FormGroup;
 
+
 	get isValid()
 	{
 		return this.form.controls[this.inputField.name].valid;
@@ -26,5 +27,7 @@ export class FormControlComponent implements OnInit
 	ngOnInit()
 	{
 	}
+
+
 
 }

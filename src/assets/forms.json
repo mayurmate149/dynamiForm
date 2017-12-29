@@ -35,6 +35,25 @@
         {"type": "text", "name": "lastName", "label": "form.last_name", "required": true},
         {"type": "text", "name": "displayName", "label": "form.display_name", "required": true}
       ]
+    },
+    {
+      "id": "fa1512eb-8e26-48f8-9515-0908911edc85",
+      "title": "Page-2",
+      "fields": [
+        {"type": "text", "name": "address", "label": "form.address", "required": true},
+        {"type": "text", "name": "city", "label": "form.city"},
+        {"type": "text", "name": "state", "label": "form.state", "required": true}
+      ]
+    },
+    {
+      "id": "fa1512eb-8e26-48f8-9515-0908911edc86",
+      "title": "Page-3",
+      "fields": [
+        {"type": "text", "name": "telephone", "label": "form.telephone", "required": true},
+        {"type": "text", "name": "mobile", "label": "form.mobile"},
+        {"type": "text", "name": "email", "label": "form.email", "required": true},
+        {"type": "text", "name": "home-fax", "label": "form.home-fax", "required": true}
+      ]
     }
   ]
 }

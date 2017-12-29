@@ -14,8 +14,15 @@ export class FormService
 
 	}
 
+
+	getAllForms()
+	{
+
+	}
+
 	getForm(id: string): Observable<FormModel>
 	{
+		//noinspection TypeScriptValidateTypes
 		return this.http.get('../../assets/forms.json')
 			.map(
 				(res) =>
@@ -23,6 +30,13 @@ export class FormService
 					res = res.json();
 					return res;
 				});
+	}
+
+	submitForm(form: any)
+	{
+		return this.http.post('',form);
+
+
 	}
 
 }

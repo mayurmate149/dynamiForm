@@ -1,12 +1,14 @@
 <div class="col-lg-5" style="margin:auto">
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div>{{page.id}}: {{page.title}}</div>
+  <form (ngSubmit)="submitPage()" [formGroup]="form">
 
     <div *ngFor="let inputField of inputFields" class="form-row">
       <form-control [inputField]="inputField" [form]="form"></form-control>
     </div>
 
     <div class="form-row">
-      <button type="submit" [disabled]="!form.valid">Save</button>
+      <!--<button type="button">Back</button>-->
+      <button type="submit" [disabled]="!form.valid">Next</button>
     </div>
   </form>
 

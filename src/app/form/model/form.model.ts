@@ -1,6 +1,6 @@
 import {ReleaseInformation} from './release-information.model';
 import {FormConfiguration} from './form-configuration.model';
-import {Page} from './page.model';
+import {Page} from '../../form-definition/page.model';
 export class FormModel
 {
 

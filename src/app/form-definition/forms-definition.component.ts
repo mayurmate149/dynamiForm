@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {InputFieldBase} from "../form-control/model/input-field/input-field-base.model";
 import {FormGroup} from "@angular/forms";
 import {FormGroupService} from "./form-group.service";
-import {Page} from "../form/model/page.model";
+import {Page} from "./page.model";
 
 @Component({
 	selector: 'form-definition',
@@ -12,9 +12,9 @@ import {Page} from "../form/model/page.model";
 export class FormDefinitionComponent implements OnInit
 {
 	@Input() page: Page;
+	@Output() onSubmit = new EventEmitter<Page>();
 	private inputFields: InputFieldBase<any>[] = [];
 	form: FormGroup;
-	payLoad = '';
 
 	constructor(private formGroupService: FormGroupService)
 	{
@@ -26,9 +26,14 @@ export class FormDefinitionComponent implements OnInit
 		this.form = this.formGroupService.toFormGroup(this.inputFields);
 	}
 
-	onSubmit()
+	submitPage()
 	{
-		this.payLoad = JSON.stringify(this.form.value);
+		let submitPage = <Page>{
+			id: this.page.id,
+			title: this.page.title,
+			fieldValues: this.form.value,
+		};
+		this.onSubmit.emit(submitPage);
 	}
 
 

@@ -2,7 +2,7 @@
 
     <div *ngIf="form">
         <div *ngFor="let page of form.pages">
-            <form-definition [page]="page"></form-definition>
+            <form-definition [page]="page" (onSubmit)="onSubmit($event)"></form-definition>
         </div>
     </div>
 </div>
