@@ -28,6 +28,7 @@ export class FormControlComponent implements OnInit
 	{
 	}
 
+	get formControl(){return this.form.get(this.inputField.name); }
 
 
 }

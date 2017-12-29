@@ -1,9 +1,9 @@
-<div [formGroup]="form">
+<div [formGroup]="form" class="col-lg-12">
   <label [attr.for]="inputField.name"> {{inputField.label}}</label>
 
-  <div [ngSwitch]="inputField.type">
+  <div [ngSwitch]="inputField.type" >
 
-    <input *ngSwitchCase="InputType.TEXT" [formControlName]="inputField.name"
+    <input *ngSwitchCase="InputType.TEXT" [formControlName]="inputField.name" class="form-control"
            [id]="inputField.name" [type]="inputField.type">
 
     <input *ngSwitchCase="InputType.PASSWORD" [formControlName]="inputField.name"
@@ -33,5 +33,19 @@
 
   </div>
 
-  <div class="errorMessage" *ngIf="!isValid">{{inputField.label}} is required</div>
+  <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)" class="fc-error">
+    <div *ngIf="formControl.errors.required">
+      Field is required.
+    </div>
+    <div *ngIf="formControl.errors.minlength">
+      Field must be at least x characters long.
+    </div>
+    <div *ngIf="formControl.errors.maxlength">
+      Field must be at least x characters long.
+    </div>
+    <div *ngIf="formControl.errors.pattern">
+      Invalid Field.
+    </div>
+  </div>
+  <!--<div class="errorMessage" *ngIf="!isValid">{{inputField.label}} is required</div>-->
 </div>

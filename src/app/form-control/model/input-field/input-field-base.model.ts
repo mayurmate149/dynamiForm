@@ -20,6 +20,7 @@ export class InputFieldBase<T>
 	public required: boolean;
 	public readOnly: boolean;
 	public dataSource: string;
+	public pattern: string;
 	public isGrouped: boolean;
 
 	constructor(options: {
@@ -30,7 +31,8 @@ export class InputFieldBase<T>
 		required?: boolean,
 		readOnly?: boolean,
 		dataSource?: string,
-		isGrouped?: boolean
+		isGrouped?: boolean,
+		pattern?: string,
 	} = {})
 	{
 		this.name = options.name;
@@ -40,5 +42,7 @@ export class InputFieldBase<T>
 		this.required = !!options.required;
 		this.readOnly = !!options.readOnly;
 		this.dataSource = options.dataSource;
+		this.pattern = options.pattern;
+		this.isGrouped = options.isGrouped;
 	}
 }
