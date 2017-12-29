@@ -1,4 +1,8 @@
 <div>
-    <form-definition></form-definition>
 
+    <div *ngIf="form">
+        <div *ngFor="let page of form.pages">
+            <form-definition [page]="page"></form-definition>
+        </div>
+    </div>
 </div>

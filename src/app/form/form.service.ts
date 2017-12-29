@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Http} from "@angular/http";
-import {Observable} from "rxjs/Observable";
-import {Page} from "./model/page.model";
-import {Form} from "@angular/forms";
+import {Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Rx';
+import {FormModel} from './model/form.model';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class FormService
@@ -14,8 +14,15 @@ export class FormService
 
 	}
 
-	getForm(id: string): Observable<Form> {
-		return this.http.get('/assets/form.json').map((res) => (res.json()));
+	getForm(id: string): Observable<FormModel>
+	{
+		return this.http.get('../../assets/forms.json')
+			.map(
+				(res) =>
+				{
+					res = res.json();
+					return res;
+				});
 	}
 
 }

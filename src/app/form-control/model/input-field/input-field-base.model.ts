@@ -1,4 +1,3 @@
-import {FILE} from "dns";
 export enum InputType
 {
 	TEXT = 'text',
@@ -35,7 +34,7 @@ export class InputFieldBase<T>
 	} = {})
 	{
 		this.name = options.name;
-		this.type = options.type || '';
+		this.type = options.type;
 		this.label = options.label || '';
 		this.value = options.value || '';
 		this.required = !!options.required;

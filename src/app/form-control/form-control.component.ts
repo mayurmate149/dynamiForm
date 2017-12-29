@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import {InputFieldBase} from './model/input-field/input-field-base.model';
+import {InputFieldBase, InputType} from './model/input-field/input-field-base.model';
 
 @Component({
 	selector: 'form-control',
@@ -10,6 +10,7 @@ import {InputFieldBase} from './model/input-field/input-field-base.model';
 export class FormControlComponent implements OnInit
 {
 
+	InputType = InputType;
 	@Input() inputField: InputFieldBase<any>;
 	@Input() form: FormGroup;
 

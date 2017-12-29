@@ -1,5 +1,5 @@
-<div [formGroup]="form" >
-  <label [attr.for]="inputField.name">{{inputField.label}}</label>
+<div [formGroup]="form">
+  <label [attr.for]="inputField.name"> {{inputField.label}}</label>
 
   <div [ngSwitch]="inputField.type">
 
@@ -25,7 +25,7 @@
            [id]="inputField.name" [type]="inputField.type">
 
     <canvas *ngSwitchCase="InputType.CANVAS" [formControlName]="inputField.name"
-            [id]="inputField.name" [type]="inputField.type" width="200" height="100"></canvas>
+            [id]="inputField.name" width="200" height="100"></canvas>
 
     <select [id]="inputField.key" *ngSwitchCase="InputType.SELECT" [formControlName]="inputField.key">
       <option *ngFor="let opt of inputField.options" [value]="opt.key">{{opt.value}}</option>

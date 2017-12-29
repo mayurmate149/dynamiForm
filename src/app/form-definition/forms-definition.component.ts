@@ -12,17 +12,22 @@ import {Page} from "../form/model/page.model";
 export class FormDefinitionComponent implements OnInit
 {
 	@Input() page: Page;
-	@Input() inputFields: InputFieldBase<any>[] = [];
+	private inputFields: InputFieldBase<any>[] = [];
 	form: FormGroup;
 	payLoad = '';
 
-	constructor(private formGroupService: FormGroupService ) {  }
+	constructor(private formGroupService: FormGroupService)
+	{
+	}
 
-	ngOnInit() {
+	ngOnInit()
+	{
+		this.inputFields = this.page.fields;
 		this.form = this.formGroupService.toFormGroup(this.inputFields);
 	}
 
-	onSubmit() {
+	onSubmit()
+	{
 		this.payLoad = JSON.stringify(this.form.value);
 	}
 

@@ -9,11 +9,11 @@ export class FormGroupService
 	{
 	}
 
-	toFormGroup(questions: InputFieldBase<any>[])
+	toFormGroup(inputFields: InputFieldBase<any>[])
 	{
 		let group: any = {};
 
-		questions.forEach(inputField =>
+		inputFields.forEach(inputField =>
 		{
 			group[inputField.name] = inputField.required ? new FormControl(inputField.value || '', Validators.required)
 				: new FormControl(inputField.value || '');
